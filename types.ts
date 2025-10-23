@@ -1,3 +1,4 @@
+
 export interface UserProfile {
     name: string;
     age: number;
@@ -31,6 +32,8 @@ export interface WorkoutExercise {
     video: string;
     targetMuscles: string;
     difficulty: 'Beginner' | 'Intermediate' | 'Advanced' | 'All Levels';
+    equipment: string;
+    description: string;
 }
 
 export interface WorkoutPlan {
@@ -60,7 +63,7 @@ export interface DailyPlan {
     completion: boolean[];
 }
 
-// FIX: Add missing 'Track' and 'Playlist' type definitions.
+// FIX: Add Track and Playlist types for the music player feature.
 export interface Track {
     title: string;
     artist: string;

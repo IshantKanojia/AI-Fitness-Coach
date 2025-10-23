@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { generateFitnessPlan } from './services/geminiService';
 import { mockUser } from './constants';
@@ -38,11 +39,16 @@ const App: React.FC = () => {
             const savedUser = localStorage.getItem('fitnessUser');
             const savedDayIndex = localStorage.getItem('fitnessDayIndex');
 
-            if (savedProgram && savedUser && savedDayIndex) {
+            // Always try to load the user's profile if it exists.
+            if (savedUser) {
+                setCurrentUser(JSON.parse(savedUser));
+            }
+
+            // Load the workout program and current day if they exist.
+            if (savedProgram && savedDayIndex) {
                 const parsedProgram = JSON.parse(savedProgram);
                 if (parsedProgram.length > 0) {
                     setProgram(parsedProgram);
-                    setCurrentUser(JSON.parse(savedUser));
                     setCurrentDayIndex(parseInt(savedDayIndex, 10));
                 }
             }
@@ -87,14 +93,16 @@ const App: React.FC = () => {
                         plan.estimatedCalories = calMatch ? parseInt(calMatch[0], 10) : 300;
                     } else if (line.includes('\t')) {
                         const parts = line.split('\t').map(p => p.trim());
-                        if(parts.length >= 6 && parts[0] !== 'Exercise') {
+                        if(parts.length >= 8 && parts[0] !== 'Exercise') {
                              exercises.push({ 
                                  name: parts[0],
                                  targetMuscles: parts[1],
                                  difficulty: parts[2] as 'Beginner' | 'Intermediate' | 'Advanced' | 'All Levels',
-                                 sets: parts[3],
-                                 reps: parts[4],
-                                 video: parts[5] || 'Watch'
+                                 equipment: parts[3],
+                                 description: parts[4],
+                                 sets: parts[5],
+                                 reps: parts[6],
+                                 video: parts[7] || 'Watch'
                              });
                         }
                     }
@@ -209,14 +217,24 @@ const App: React.FC = () => {
     };
 
     const handleStartOver = () => {
-        if (window.confirm("Are you sure you want to start over? All your progress will be deleted.")) {
-            localStorage.clear();
-            localStorage.setItem('fitnessTheme', theme);
-            
+        if (window.confirm("Are you sure you want to start over? Your workout history will be cleared, but your profile information will be saved.")) {
+            // Clear workout program from state and storage
             setProgram([]);
-            setCurrentUser(mockUser);
             setCurrentDayIndex(0);
+            localStorage.removeItem('fitnessProgram');
+            localStorage.removeItem('fitnessDayIndex');
             setError(null);
+
+            // Reset user's progress fields but keep their profile data
+            setCurrentUser(prevUser => {
+                const updatedUser = {
+                    ...prevUser,
+                    streak_days: 0,
+                };
+                // Persist the updated user data immediately so it's not lost
+                localStorage.setItem('fitnessUser', JSON.stringify(updatedUser));
+                return updatedUser;
+            });
         }
     };
     

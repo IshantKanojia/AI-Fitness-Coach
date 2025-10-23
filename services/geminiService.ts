@@ -45,12 +45,12 @@ Your entire response MUST strictly follow this format, including the emojis and 
 🏋️ Today's Workout Plan (Day ${history.length + 1} of Program)
 Focus: [Primary muscle group or cardio type, different from recent days]
 Estimated Calories Burned: [A single number representing the total calories for this workout]
-[Provide a table of exercises. Use tabs to separate columns: Exercise, Target Muscles, Difficulty, Sets, Reps, Video. Difficulty MUST be one of: Beginner, Intermediate, Advanced, All Levels. The "Video" column should contain a YouTube search URL for a tutorial of the exercise, formatted like this: https://www.youtube.com/results?search_query=[Exercise+Name]+tutorial. Replace spaces in the exercise name with '+'.]
-Exercise	Target Muscles	Difficulty	Sets	Reps	Video
-[Exercise 1]	[Target Muscles]	[Difficulty]	[Sets]	[Reps]	https://www.youtube.com/results?search_query=Exercise+1+tutorial
-[Exercise 2]	[Target Muscles]	[Difficulty]	[Sets]	[Reps]	https://www.youtube.com/results?search_query=Exercise+2+tutorial
-[Exercise 3]	[Target Muscles]	[Difficulty]	[Sets]	[Reps]	https://www.youtube.com/results?search_query=Exercise+3+tutorial
-[Exercise 4]	[Target Muscles]	[Difficulty]	[Sets]	[Reps]	https://www.youtube.com/results?search_query=Exercise+4+tutorial
+[Provide a table of exercises. Use tabs to separate columns: Exercise, Target Muscles, Difficulty, Equipment, Description, Sets, Reps, Video. Difficulty MUST be one of: Beginner, Intermediate, Advanced, All Levels. The "Video" column should contain a YouTube search URL for a tutorial of the exercise, formatted like this: https://www.youtube.com/results?search_query=[Exercise+Name]+tutorial. Replace spaces in the exercise name with '+'. The Description should be a brief, one-sentence explanation of the exercise. The Equipment column should list necessary equipment based on the user's available equipment.]
+Exercise	Target Muscles	Difficulty	Equipment	Description	Sets	Reps	Video
+[Exercise 1]	[Target Muscles]	[Difficulty]	[Equipment]	[Description]	[Sets]	[Reps]	https://www.youtube.com/results?search_query=Exercise+1+tutorial
+[Exercise 2]	[Target Muscles]	[Difficulty]	[Equipment]	[Description]	[Sets]	[Reps]	https://www.youtube.com/results?search_query=Exercise+2+tutorial
+[Exercise 3]	[Target Muscles]	[Difficulty]	[Equipment]	[Description]	[Sets]	[Reps]	https://www.youtube.com/results?search_query=Exercise+3+tutorial
+[Exercise 4]	[Target Muscles]	[Difficulty]	[Equipment]	[Description]	[Sets]	[Reps]	https://www.youtube.com/results?search_query=Exercise+4+tutorial
 Safety Tip: [Provide a relevant safety tip for one of the exercises.]
 
 🍽️ Meal Plan
