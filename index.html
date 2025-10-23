@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Fitness Coach</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --color-background: #f9fafb; /* gray-50 */
+        --color-surface: #ffffff; /* white */
+        --color-on-surface: #111827; /* gray-900 */
+        --color-on-surface-secondary: #6b7280; /* gray-500 */
+      }
+      .dark {
+        --color-background: #111827; /* gray-900 */
+        --color-surface: #1f2937; /* gray-800 */
+        --color-on-surface: #f9fafb; /* gray-50 */
+        --color-on-surface-secondary: #9ca3af; /* gray-400 */
+      }
+      body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#3b82f6',
+              'secondary': '#8b5cf6',
+              'background': 'var(--color-background)',
+              'surface': 'var(--color-surface)',
+              'on-surface': 'var(--color-on-surface)',
+              'on-surface-secondary': 'var(--color-on-surface-secondary)',
+            }
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.22.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-background text-on-surface">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

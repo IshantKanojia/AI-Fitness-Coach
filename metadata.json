@@ -1,0 +1,5 @@
+{
+  "name": "AI Fitness Coach",
+  "description": "An AI-powered fitness coach that generates personalized workout and nutrition plans based on user data, and tracks progress with visual charts and summaries.",
+  "requestFramePermissions": []
+}
