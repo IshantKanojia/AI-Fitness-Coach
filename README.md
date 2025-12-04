@@ -4,5 +4,5 @@ MADE BY ISHANT KANOJIA
 
 <div align="center">
   <h1 style="font-family: 'Arial', sans-serif; color: #ff004f; text-transform: uppercase; font-size: 100px;">PsychoPathIK</h1>
-  <p style="font-size: 20px; color: #fff;">Creative Showcase</p>
+  <p style="font-size: 20px; color: #fff;"></p>
 </div>
