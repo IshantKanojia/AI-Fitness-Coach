@@ -9,3 +9,4 @@ MADE BY ISHANT KANOJIA
 
 
 https://ai-fitness-coach-rose.vercel.app/
+https://fitnessscoach.netlify.app/
