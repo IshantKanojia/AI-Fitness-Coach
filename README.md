@@ -8,5 +8,5 @@ MADE BY ISHANT KANOJIA
 </div>
 
 
-https://ai-fitness-coach-rose.vercel.app/
-https://fitnessscoach.netlify.app/
+<div>https://ai-fitness-coach-rose.vercel.app/</div>
+<div>https://fitnessscoach.netlify.app/</div>
